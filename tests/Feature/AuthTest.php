@@ -2,13 +2,12 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AuthTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
     /**
      * A basic feature test example.
@@ -50,7 +49,6 @@ class AuthTest extends TestCase
     {
         $response = $this->json('GET', route('api.user'));
 
-//        fwrite(STDERR, print_r($response->getContent(), TRUE));
         $response->assertStatus(401);
     }
 
@@ -69,7 +67,6 @@ class AuthTest extends TestCase
             'Authorization' => 'Bearer '. $token
         ])->json('GET', route('api.user'));
 
-        //fwrite(STDERR, print_r($response->getContent(), TRUE));
         $response->assertStatus(200);
     }
 }

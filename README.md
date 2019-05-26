@@ -1,2 +1,2 @@
 # laravel-firebase-jwt
-RESTfull API server boilerplate with Laravel and Firebase/php-jwt Authentication
+[Laravel](https://github.com/laravel/laravel) with [Firebase/php-jwt](https://github.com/firebase/php-jwt) API authentication
